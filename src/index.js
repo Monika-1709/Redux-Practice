@@ -35,7 +35,8 @@ import { addtask, removetask, completetask } from "./action";
 const unsuscribe = store.subscribe(() => {
   console.log("Updated", store.getState());
 });
-store.dispatch(addtask("task 2"));
-store.dispatch(addtask("task 3"));
-store.dispatch(removetask(2));
-store.dispatch(completetask(1));
+store.dispatch(addtask({ task: "task 2" }));
+store.dispatch(addtask({ task: "task 3" }));
+store.dispatch(removetask({ id: 2 }));
+store.dispatch(completetask({ id: 1 }));
+console.log(store.getState());
